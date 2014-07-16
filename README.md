@@ -17,4 +17,4 @@ Progress
 
 Currently in the very initial stages.  Doing a direct port from Python.  Trying to keep the current logic, most classes, functions, and variable names.
 
-Anyone who is interested is welcome to contribut.
+Anyone who is interested is welcome to contribute.
