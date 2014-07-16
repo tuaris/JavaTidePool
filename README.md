@@ -10,6 +10,8 @@ Why?
 
 While the Python version 'does the job', it's code is very messy, error prone, and fails miserably when things go wrong. This is an attempt (and hopefully a successful one) to port the Python code into a cleaner, better, faster Java version. 
 
+Additionally, the new NodeJS version while great in solving many of the issues, may have some scalability and performance limitations.
+
 The switch itself to Java will result in a major performance boost and better maintainability.
 
 Progress
