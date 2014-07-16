@@ -12,8 +12,12 @@ package modules;
  */
 public class Settings {
     private static int MERKLE_REFRESH_INTERVAL;
+    private static int PREVHASH_REFRESH_INTERVAL;
     
     public static int getMerkleRefreshInterval(){
         return MERKLE_REFRESH_INTERVAL;
+    }
+    public static int getPrevhashRefreshInterval(){
+        return PREVHASH_REFRESH_INTERVAL;
     }
 }

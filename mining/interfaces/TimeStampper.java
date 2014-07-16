@@ -6,14 +6,14 @@
 
 package mining.interfaces;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
  * @author Danny
  */
 public class TimeStampper {
-    public static int getTime(){
-        return new Date().hashCode();
+    public static int getCurrentUnixTime(){
+        return (int) (Calendar.getInstance().getTimeInMillis() / 1000L);
     }
 }

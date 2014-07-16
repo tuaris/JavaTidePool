@@ -6,7 +6,7 @@
 
 package modules;
 
-import java.util.Date;
+import java.util.Calendar;
 import mining.interfaces.TimeStampper;
 
 /**
@@ -30,12 +30,16 @@ public class BlockUpdater {
     
     // Shedules an update to be run later
     protected void schedule(){
-        Date next_run = get_next_time();
+        Calendar next_run = get_next_time();
+        //TODO: Schedule the task run
     }
     
     // Calculates the next run time
-    private Date get_next_time(){
-        return new Date();
+    private Calendar get_next_time(){
+        Calendar when = Calendar.getInstance();
+        int seconds = Settings.getPrevhashRefreshInterval() - (mining.interfaces.TimeStampper.getCurrentUnixTime() - REGISTRY.getLastUpdate()) % Settings.getPrevhashRefreshInterval();
+        when.add(Calendar.SECOND, seconds);
+        return when;
     }
     
     /*
@@ -53,6 +57,7 @@ public class BlockUpdater {
         try{
             // Get the current prevhash from the pool registry if one exists
             if(REGISTRY.getLastBlock() != null){
+                // TODO: Port Python Code, "current_prevhash = "%064x" % self.registry.last_block.hashPrevBlock"
                 current_prevhash = REGISTRY.getLastBlock().getPrevHash();
             }
             else{
@@ -76,7 +81,7 @@ public class BlockUpdater {
             if (prevhash.equals(current_prevhash)){
                 doUpdate = true;
             }
-            else if(TimeStampper.getTime() - REGISTRY.getLastUpdate() >= Settings.getMerkleRefreshInterval()){
+            else if(TimeStampper.getCurrentUnixTime() - REGISTRY.getLastUpdate() >= Settings.getMerkleRefreshInterval()){
                 doUpdate = true;
             }
             
