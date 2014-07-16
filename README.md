@@ -1,4 +1,4 @@
-JavaTidePool
+TidePool Stratum Mining Server in Java
 ============
 
-Java Implimentation of TidePool
+Java Implementation of the TidePool stratum mining pool server.
