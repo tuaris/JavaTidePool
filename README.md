@@ -12,3 +12,7 @@ While the Python version 'does the job', it's code is very messy, error prone, a
 
 The switch itself to Java will result in a major performance boost and better maintainability.
 
+Progress
+----------
+
+Currently in the very initial stages.  Doing a direct port from Python.  Trying to keep the current logic, most classes, functions, and variable names.
